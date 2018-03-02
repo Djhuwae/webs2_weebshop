@@ -13,10 +13,11 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             'id' => 1,
-            'name' => 'One Piece T-shirt: Skull with map (woman)',
-            'description' => 'Dit T-shirt van Otaku Selection is uitstekende kwaliteit en 100% katoen (190g/m2).',
+            'name' => 'Goku supreme sweatshirt',
+            'description' => 'Black Kid Goku Bape & Supreme Mix Sweatshirt',
             'quantity' => 50,
-            'price' => 20.00,
+            'price' => 39.99,
+            'imageurl' =>'https://detectiveshirts.com/photos/goku-supreme-sweatshirt.jpg',
             'categories_id' => 1,
         ]);
     }

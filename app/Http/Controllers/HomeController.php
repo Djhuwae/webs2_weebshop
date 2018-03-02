@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Category;
+use \App\Product;
+
 
 class HomeController extends Controller
 {
@@ -30,6 +32,7 @@ class HomeController extends Controller
     public function getMenu()
     {
         $categories = Category::all();
-        return view('home', compact('categories'));
+        $products = Product::all();
+        return view('home', compact('categories'), compact('products'));
     }
 }
