@@ -11,14 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function () {
+    return view('home');
+});
+Route::get('/', function () {
+    return view('home');
+});
+Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
+View::composer('layouts.menu', function($view)
+{
+    $view->with(['categories' => \App\Category::all() ,'subcategories' => \App\Subcategory::all()]);
+});
+View::composer('layouts.menu2', function($view)
+{
+    $view->with(['categories' => \App\Category::all()]);
+});

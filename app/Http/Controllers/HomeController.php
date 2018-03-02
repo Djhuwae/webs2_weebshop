@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getMenu()
+    {
+        $categories = Category::all();
+        return view('home', compact('categories'));
+    }
 }
