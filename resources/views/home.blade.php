@@ -67,9 +67,9 @@
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top img-fluid" src={{$products->get(2)->imageurl }} alt=""></a>
                             <div class="card-block">
-                                <h4 class="card-title"><a href="#">Item Two</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                                <h4 class="card-title"><a href="#">{{$products->get(2)->name }}</a></h4>
+                                <h5>${{$products->get(2)->price }}</h5>
+                                <p class="card-text">{{$products->get(2)->description }}</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -79,11 +79,11 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top img-fluid" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top img-fluid" src={{$products->get(3)->imageurl }} alt=""></a>
                             <div class="card-block">
-                                <h4 class="card-title"><a href="#">Item Three</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                                <h4 class="card-title"><a href="#">{{$products->get(3)->name }}</a></h4>
+                                <h5>${{$products->get(3)->price }}</h5>
+                                <p class="card-text">{{$products->get(3)->description }}</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -93,11 +93,11 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top img-fluid" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top img-fluid" src={{$products->get(4)->imageurl }} alt=""></a>
                             <div class="card-block">
-                                <h4 class="card-title"><a href="#">Item Four</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                                <h4 class="card-title"><a href="#">{{$products->get(4)->name }}</a></h4>
+                                <h5>${{$products->get(4)->price }}</h5>
+                                <p class="card-text">{{$products->get(4)->description }}</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -107,11 +107,11 @@
 
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top img-fluid" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top img-fluid" src={{$products->get(0)->imageurl }} alt=""></a>
                             <div class="card-block">
-                                <h4 class="card-title"><a href="#">Item Five</a></h4>
-                                <h5>$24.99</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                                <h4 class="card-title"><a href="#">{{$products->get(1)->name }}</a></h4>
+                                <h5>${{$products->get(1)->price }}</h5>
+                                <p class="card-text">{{$products->get(1)->description }}</p>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

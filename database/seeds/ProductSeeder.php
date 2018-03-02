@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Voor iedereen die Trunks tof vindt, is er nu de Banpresto Trunks-figurine met speciale inkleuring waardoor het lijkt alsof hij zo uit de manga en anime is gestapt.',
                 'quantity' => 50,
                 'price' => 79.99,
-                'imageurl' =>'https://detectiveshirts.com/photos/goku-supreme-sweatshirt.jpg',
+                'imageurl' =>'http://picscdn.redblue.de/doi/pixelboxx-mss-74722582/fee_786_587_png/BANPRESTO-Dragon-Ball-Z%3A-Trunks',
                 'categories_id' => 2,
             ],
             [
@@ -45,7 +45,7 @@ class ProductSeeder extends Seeder
                 'description' => 'DRAGON BALL - Metal Keychain - DBZ/Dragon Ball',
                 'quantity' => 50,
                 'price' => 8.49,
-                'imageurl' =>'https://s.s-bol.com/imgbase0/imagebase3/large/FC/9/0/1/7/9200000045977109.jpg',
+                'imageurl' =>'https://cdn.shopify.com/s/files/1/0643/2323/products/1pc-Dragon-Ball-Z-New-In-Bag-7-Stars-Crystal-Balls-Keychain-Pendant-Complete-set-2_96b83c1d-2ca0-4119-ab00-fd34bdd9d8c5.jpeg?v=1464337803',
                 'categories_id' => 4,
             ],
             [
