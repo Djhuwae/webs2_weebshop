@@ -6,6 +6,7 @@
                 @if($subcategory->category_id == $category->id)
 
                     <li role="presentation"><a href="category/{{$category->id}}/{{('subcategory/')}}{{$subcategory->id}}" role="menuitem">
+                            $output->writeln();
                             {{$subcategory->name}}
                         </a></li>
 

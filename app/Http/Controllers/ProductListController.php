@@ -13,8 +13,8 @@ class ProductListController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($category = null,$subCategory = null){
-        $subCategories = App\Subcategory::where("id",$category->sub_category_id)->get();
-        return View("pages/productlist",[ "category" => $category, "subcategory" => $subcategory, "subCategories" => $subcategories, "products" => $products]);
+        $subCategories = App\Subcategory::where("id",$category->subcategories_id)->get();
+        return View("pages/productlist",[ "category" => $category, "subcategory" => $subCategory, "subCategories" => $subcategories, "products" => $products]);
 
     }
 }
