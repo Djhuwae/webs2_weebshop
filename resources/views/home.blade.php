@@ -65,7 +65,7 @@
 
                     <div class="col-lg-4 col-md-6 mb-3">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top img-fluid" src="http://placehold.it/700x400" alt=""></a>
+                            <a href="#"><img class="card-img-top img-fluid" src={{$products->get(2)->imageurl }} alt=""></a>
                             <div class="card-block">
                                 <h4 class="card-title"><a href="#">Item Two</a></h4>
                                 <h5>$24.99</h5>
