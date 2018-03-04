@@ -15,9 +15,9 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 mb-4">
                                     <div class="card h-100">
-                                        <a href="/itemList/{{$category->name}}/{{$subcategory->name}}/{{$product->id}}"><img class="card-img-top img-fluid" src={{$product->imageurl }} alt=""></a>
+                                        <a href="/itemList/{{$category->id}}/{{$subcategory->id}}/{{$product->id}}"><img class="card-img-top img-fluid" src={{$product->imageurl }} alt=""></a>
                                         <div class="card-block">
-                                            <h4 class="card-title"><a href="/itemList/{{$category->name}}/{{$subcategory->name}}/{{$product->id}}">{{$product->name }}</a></h4>
+                                            <h4 class="card-title"><a href="/itemList/{{$category->id}}/{{$subcategory->id}}/{{$product->id}}">{{$product->name }}</a></h4>
                                             <h5>$ {{ $product->price }}</h5>
                                         </div>
                                         <div class="card-footer">

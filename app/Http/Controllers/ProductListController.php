@@ -27,24 +27,18 @@ class ProductListController extends Controller
             return view('itemList', compact('categories', 'subcategories'));
     }
 
-    public function showCategory($id){
-        $category = Category::where('name', $id)->first();
+    public function showCategory(Category $category){
         $products = Product::all();
         $subcategories = Subcategory::all();
         return view('category', compact('category', 'subcategories', 'products'));
     }
 
-    public function showSubcategory($category, $subcategory){
-        $category = Category::where('name', $category)->first();
+    public function showSubcategory(Category $category, Subcategory $subcategory){
         $products = Product::all();
-        $subcategory = Subcategory::where('name', $subcategory)->first();
         return view('subcategory', compact('category', 'subcategory', 'products'));
     }
 
-    public function showProduct($category, $subcategory, $product){
-        $category = Category::where('name', $category)->first();
-        $product = Product::where('id', $product)->first();
-        $subcategory = Subcategory::where('name', $subcategory)->first();
+    public function showProduct(Category $category, Subcategory $subcategory, Product $product){
         return view('product', compact('category', 'subcategory', 'product'));
     }
 }
