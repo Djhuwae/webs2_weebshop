@@ -22,6 +22,8 @@ class CreateProducts extends Migration
             $table->string('imageurl');
             $table->integer('categories_id')->unsigned();
             $table->foreign('categories_id')->references('id')->on('categories');
+            $table->integer('subcategories_id')->unsigned();
+            $table->foreign('subcategories_id')->references('id')->on('subcategories');
         });
 
     }

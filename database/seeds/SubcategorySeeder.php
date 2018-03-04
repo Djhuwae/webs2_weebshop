@@ -38,11 +38,11 @@ class SubcategorySeeder extends Seeder
 
             ],
             [
-                'categories_id' => 4,'id' => 8,'name' => 'One Piece',
+                'categories_id' => 4,'id' => 8,'name' => 'DBZ',
 
             ],
             [
-                'categories_id' => 5,'id' => 9,'name' => 'Naruto',
+                'categories_id' => 5,'id' => 9,'name' => 'Fairy Tail',
 
             ],
             [

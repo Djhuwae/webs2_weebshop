@@ -1,3 +1,5 @@
+@extends('layouts.default')
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
