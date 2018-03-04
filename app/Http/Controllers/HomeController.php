@@ -33,6 +33,7 @@ class HomeController extends Controller
     {
         $categories = Category::all();
         $products = Product::all();
-        return view('home', compact('categories'), compact('products'));
+
+        return view('home', compact('categories', 'products'));
     }
 }
