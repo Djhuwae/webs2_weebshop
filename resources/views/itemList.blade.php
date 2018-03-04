@@ -1,38 +1,30 @@
 @extends('layouts.default')
 
 
-        <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
+@section('content')
+    <h1>Categorieën en subcategorieën</h1>
+    @foreach($categories as $category)
+        <ul>
+            <li ><a  role="button" aria-expanded="false" href="/itemList/{{$category->name}}">{{$category->name}}<span class="caret"></span></a>
+                <ul  role="menu" >
+                    @foreach($subcategories as $subcategory)
 
-<body>
-<h1>Categorieën en subcategorieën</h1>
-@foreach($categories as $category)
-    <ul>
-        <li ><a  role="button" aria-expanded="false" href="/itemList/{{$category->name}}">{{$category->name}}<span class="caret"></span></a>
-            <ul  role="menu" >
-                @foreach($subcategories as $subcategory)
+                        @if($subcategory->categories_id == $category->id)
 
-                    @if($subcategory->categories_id == $category->id)
+                            <li role="presentation"><a href="itemList/{{$category->name}}/{{$subcategory->name}}" role="menuitem">
 
-                        <li role="presentation"><a href="itemList/{{$category->name}}/{{$subcategory->name}}" role="menuitem">
+                                    {{$subcategory->name}}
 
-                                {{$subcategory->name}}
-
-                            </a></li>
+                                </a></li>
 
 
-                    @endif
+                        @endif
 
-                @endforeach
-            </ul>
-        </li>
-    </ul>
+                    @endforeach
+                </ul>
+            </li>
+        </ul>
 
-@endforeach
-</body>
-
-</html>
+    @endforeach
+@endsection
 
