@@ -30,34 +30,13 @@ Route::get('/about', function () {
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/itemList', 'ProductListController@index');
 
-Route::get('/itemList', function () {
-    $categories = Category::all();
-    $subcategories = \App\Subcategory::all();
-    return view('itemList', compact('categories', 'subcategories'));
-});
+Route::get('/itemList/{category}', 'ProductListController@showCategory');
 
+Route::get('/itemList/{category}/{subcategory}', 'ProductListController@showSubcategory');
 
-Route::get('/itemList/{category}', function ($id) {
-    $category = Category::where('name', $id)->first();
-    $products = Product::all();
-    $subcategories = Subcategory::all();
-    return view('category', compact('category', 'subcategories', 'products'));
-});
-
-Route::get('/itemList/{category}/{subcategory}', function ($category, $subcategory) {
-    $category = Category::where('name', $category)->first();
-    $products = Product::all();
-    $subcategory = Subcategory::where('name', $subcategory)->first();
-    return view('subcategory', compact('category', 'subcategory', 'products'));
-});
-
-Route::get('/itemList/{category}/{subcategory}/{product}', function ($category, $subcategory, $product) {
-    $category = Category::where('name', $category)->first();
-    $product = Product::where('id', $product)->first();
-    $subcategory = Subcategory::where('name', $subcategory)->first();
-    return view('product', compact('category', 'subcategory', 'product'));
-});
+Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
 
 
 Route::get('/cms', function () {
