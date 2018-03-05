@@ -39,9 +39,8 @@ Route::get('/itemList/{category}/{subcategory}', 'ProductListController@showSubc
 Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
 
 
-Route::get('/cms', function () {
-    return view('cms');
-});
+Route::get('/cms', 'ProductController@index');
+
 
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
 View::composer('layouts.menu', function($view)

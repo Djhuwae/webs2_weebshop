@@ -23,7 +23,7 @@ class ProductListController extends Controller
 //
     public function index(){
         $categories = Category::all();
-        $subcategories = \App\Subcategory::all();
+        $subcategories = Subcategory::all();
         return view('itemList', compact('categories', 'subcategories'));
     }
 
