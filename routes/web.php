@@ -39,8 +39,11 @@ Route::get('/itemList/{category}/{subcategory}', 'ProductListController@showSubc
 Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
 
 
-Route::get('/cms', 'ProductController@index');
+Route::get('/cms/products', 'ProductController@index');
 
+Route::get('/cms/products/create', 'ProductController@createPage');
+
+Route::post('/cms/products', 'ProductController@store');
 
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
 View::composer('layouts.menu', function($view)
