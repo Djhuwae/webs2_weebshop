@@ -52,6 +52,19 @@ Route::post('/cms/products/{product}/edit', 'ProductController@update');
 Route::get('/cms/products/{product}/delete', 'ProductController@destroy');
 
 
+Route::get('/cms/categories', 'CategoryController@index');
+
+Route::get('/cms/categories/create', 'CategoryController@create');
+
+Route::post('/cms/categories', 'CategoryController@store');
+
+Route::get('/cms/categories/{category}/edit', 'CategoryController@edit');
+
+Route::post('/cms/categories/{category}/edit', 'CategoryController@update');
+
+Route::get('/cms/categories/{category}/delete', 'CategoryController@destroy');
+
+
 
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
 View::composer('layouts.menu', function($view)

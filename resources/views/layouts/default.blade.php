@@ -94,7 +94,12 @@
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <a href="/cms/products">
-                                    CMS producten
+                                    CMS products
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cms/categories">
+                                    CMS categories
                                 </a>
                             </li>
                             <li>
