@@ -18,6 +18,7 @@
                         <p class="card-text">{{$product->description }}</p>
                     </div>
                     <div class="card-footer">
+                        <button><a href="/cms/products/{{$product->id}}/edit">Wijzigen</a></button>
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                     </div>
                 </div>

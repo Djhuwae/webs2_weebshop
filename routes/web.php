@@ -45,6 +45,12 @@ Route::get('/cms/products/create', 'ProductController@createPage');
 
 Route::post('/cms/products', 'ProductController@store');
 
+Route::get('/cms/products/{product}/edit', 'ProductController@edit');
+
+Route::post('/cms/products/{product}/edit', 'ProductController@update');
+
+
+
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
 View::composer('layouts.menu', function($view)
 {
