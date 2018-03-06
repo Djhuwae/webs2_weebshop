@@ -2,7 +2,13 @@
 
 
 @section('content')
+    {{--@if($flash = session('message'))--}}
+        {{--<div id="flash-message" class="alert alert-success" role="alert">--}}
+            {{--{{$flash}}--}}
+        {{--</div>--}}
+    {{--@endif--}}
     <h1>Producten beheren</h1>
+
 
     <button><a href="/cms/products/create">Toevoegen</a></button>
 
