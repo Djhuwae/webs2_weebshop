@@ -66,6 +66,17 @@ Route::get('/cms/categories/{category}/delete', 'CategoryController@destroy');
 
 
 
+Route::get('/cms/subcategories/create', 'SubcategoryController@create');
+
+Route::post('/cms/subcategories', 'SubcategoryController@store');
+
+Route::get('/cms/subcategories/{subcategory}/edit', 'SubcategoryController@edit');
+
+Route::post('/cms/subcategories/{subcategory}/edit', 'SubcategoryController@update');
+
+Route::get('/cms/subcategories/{subcategory}/delete', 'SubcategoryController@destroy');
+
+
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
 View::composer('layouts.menu', function($view)
 {

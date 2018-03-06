@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <h1>Manage categories</h1>
+    <h1>Manage categories and subcategories</h1>
 
     <div class="col-sm-8">
         <h2>Edit category: {!! $category->name !!}</h2>

@@ -27,9 +27,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
-        return view('cms.categories.createcategory', compact('categories', 'subcategories' ));
+        return view('cms.categories.createcategory');
     }
 
     /**
@@ -67,10 +65,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::all();
-        $subcategories = Subcategory::all();
         $category = Category::findOrFail($id);
-        return view('cms.categories.editcategory', compact('category', 'categories', 'subcategories'));
+        return view('cms.categories.editcategory', compact('category'));
     }
 
     /**

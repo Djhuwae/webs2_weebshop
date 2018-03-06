@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use \App\Subcategory;
+use \App\Category;
 use Illuminate\Http\Request;
+
 
 class SubcategoryController extends Controller
 {
@@ -23,7 +26,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('cms.subcategories.createsubcategory', compact('categories'));
     }
 
     /**
@@ -32,9 +36,20 @@ class SubcategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $categories = Category::all();
+
+        $subcategory = new Subcategory;
+        $subcategory->name = request('name');
+        foreach($categories as $category){
+            if($category->name == request('cat')){
+                $subcategory->categories_id = $category->id;
+            }
+        }
+        $subcategory->save();
+
+        return redirect('/cms/categories')->with('success', 'Subcategory was added succesfully');
     }
 
     /**
@@ -56,7 +71,9 @@ class SubcategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::all();
+        $subcategory = Subcategory::findOrFail($id);
+        return view('cms.subcategories.editsubcategory', compact('subcategory', 'categories'));
     }
 
     /**
@@ -66,9 +83,19 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Subcategory $subcategory)
     {
-        //
+        $categories = Category::all();
+
+        $subcategory->name = request('name');
+        foreach($categories as $category){
+            if($category->name == request('cat')){
+                $subcategory->categories_id = $category->id;
+            }
+        }
+        $subcategory->save();
+
+        return redirect('cms/categories')->with('success', 'Subcategory was updated succesfully');
     }
 
     /**
@@ -77,8 +104,9 @@ class SubcategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Subcategory $subcategory)
     {
-        //
+        $subcategory->delete();
+        return redirect('/cms/categories')->with('success', 'Subcategory deleted succesfully');
     }
 }
