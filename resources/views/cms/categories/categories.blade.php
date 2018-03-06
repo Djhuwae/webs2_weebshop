@@ -24,8 +24,8 @@
                             <li role="presentation">
 
                                     {{$subcategory->name}}
-                                <button><a href="/cms/categories/{{$subcategory->id}}/edit">Edit</a></button>
-                                <button class="btn btn-danger m-2"><a href="/cms/categories/{{$subcategory->id}}/delete" >Delete</a></button>
+                                <button><a href="/cms/subcategories/{{$subcategory->id}}/edit">Edit</a></button>
+                                <button class="btn btn-danger m-2"><a href="/cms/subcategories/{{$subcategory->id}}/delete" >Delete</a></button>
                             </li>
 
 
