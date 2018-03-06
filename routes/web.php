@@ -13,6 +13,9 @@
 
 
 use Illuminate\Support\Facades\DB;
+use App\Category;
+use App\Subcategory;
+use App\Product;
 
 Auth::routes();
 
@@ -27,42 +30,52 @@ Route::get('/about', function () {
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/itemList', 'ProductListController@index');
 
-Route::get('/itemList', function () {
-    $categories = \App\Category::all();
-    $subcategories = \App\Subcategory::all();
-    return view('itemList', compact('categories', 'subcategories'));
-});
+Route::get('/itemList/{category}', 'ProductListController@showCategory');
 
+Route::get('/itemList/{category}/{subcategory}', 'ProductListController@showSubcategory');
 
-Route::get('/itemList/{category}', function ($id) {
-    //$category = \App\Category::all()->where('id', $id)->first();
-    $category = DB::table('categories')->where('name', $id)->first();
-    $products = \App\Product::all();
-    $subcategories = \App\Subcategory::all();
-    return view('category', compact('category', 'subcategories', 'products'));
-});
-
-Route::get('/itemList/{category}/{subcategory}', function ($category, $subcategory) {
-    //$category = \App\Category::all()->where('id', $id)->first();
-    $category = DB::table('categories')->where('name', $category)->first();
-    $products = \App\Product::all();
-    $subcategory = DB::table('subcategories')->where('name', $subcategory)->first();
-    return view('subcategory', compact('category', 'subcategory', 'products'));
-});
-
-Route::get('/itemList/{category}/{subcategory}/{product}', function ($category, $subcategory, $product) {
-    //$category = \App\Category::all()->where('id', $id)->first();
-    $category = DB::table('categories')->where('name', $category)->first();
-    $product = DB::table('products')->where('id', $product)->first();
-    $subcategory = DB::table('subcategories')->where('name', $subcategory)->first();
-    return view('product', compact('category', 'subcategory', 'product'));
-});
+Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
 
 
-Route::get('/cms', function () {
-    return view('cms');
-});
+Route::get('/cms/products', 'ProductController@index');
+
+Route::get('/cms/products/create', 'ProductController@createPage');
+
+Route::post('/cms/products', 'ProductController@store');
+
+Route::get('/cms/products/{product}/edit', 'ProductController@edit');
+
+Route::post('/cms/products/{product}/edit', 'ProductController@update');
+
+Route::get('/cms/products/{product}/delete', 'ProductController@destroy');
+
+
+Route::get('/cms/categories', 'CategoryController@index');
+
+Route::get('/cms/categories/create', 'CategoryController@create');
+
+Route::post('/cms/categories', 'CategoryController@store');
+
+Route::get('/cms/categories/{category}/edit', 'CategoryController@edit');
+
+Route::post('/cms/categories/{category}/edit', 'CategoryController@update');
+
+Route::get('/cms/categories/{category}/delete', 'CategoryController@destroy');
+
+
+
+Route::get('/cms/subcategories/create', 'SubcategoryController@create');
+
+Route::post('/cms/subcategories', 'SubcategoryController@store');
+
+Route::get('/cms/subcategories/{subcategory}/edit', 'SubcategoryController@edit');
+
+Route::post('/cms/subcategories/{subcategory}/edit', 'SubcategoryController@update');
+
+Route::get('/cms/subcategories/{subcategory}/delete', 'SubcategoryController@destroy');
+
 
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
 View::composer('layouts.menu', function($view)

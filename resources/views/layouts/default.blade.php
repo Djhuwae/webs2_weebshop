@@ -38,6 +38,7 @@
 
     <!-- Custom CSS -->
     <link href={{asset('css/shop-homepage.css')}} rel="stylesheet">
+    <link href={{asset('css/cmsproduct.css')}} rel="stylesheet">
 
     <!-- Temporary fix for navbar responsiveness -->
     <style>
@@ -92,8 +93,13 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="/cms">
-                                    CMS
+                                <a href="/cms/products">
+                                    CMS products
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/cms/categories">
+                                    CMS categories
                                 </a>
                             </li>
                             <li>
@@ -122,7 +128,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-inverse">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Weebshop 2018</p>
+        <p class="m-0 text-center text-white">&copy; Copyright 2018. Powered by Donnèh en Nur. ALL RIGHTS RESERVED</p>
     </div>
     <!-- /.container -->
 </footer>

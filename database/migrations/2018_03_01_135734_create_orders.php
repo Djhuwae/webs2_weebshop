@@ -15,9 +15,16 @@ class CreateOrders extends Migration
     {
         Schema::create('orders',function(Blueprint $table){
             $table->increments('id');
-            $table->dateTime('purchase_date');
             $table->integer('users_id')->unsigned();
             $table->foreign('users_id')->references('id')->on('users');
+            $table->timestamps();
+        });
+
+        Schema::create('order_product', function (Blueprint $table) {
+            $table->integer('order_id');
+            $table->integer('product_id');
+            $table->integer('quantity');
+            $table->primary(['order_id', 'product_id']);
         });
 
     }

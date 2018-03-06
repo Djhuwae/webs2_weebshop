@@ -17,13 +17,13 @@ class CreateProducts extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->integer('quantity');
             $table->double('price');
             $table->string('imageurl');
             $table->integer('categories_id')->unsigned();
             $table->foreign('categories_id')->references('id')->on('categories');
             $table->integer('subcategories_id')->unsigned();
             $table->foreign('subcategories_id')->references('id')->on('subcategories');
+            $table->timestamps();
         });
 
     }
