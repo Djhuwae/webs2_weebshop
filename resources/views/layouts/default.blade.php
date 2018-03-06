@@ -38,6 +38,7 @@
 
     <!-- Custom CSS -->
     <link href={{asset('css/shop-homepage.css')}} rel="stylesheet">
+    <link href={{asset('css/cmsproduct.css')}} rel="stylesheet">
 
     <!-- Temporary fix for navbar responsiveness -->
     <style>

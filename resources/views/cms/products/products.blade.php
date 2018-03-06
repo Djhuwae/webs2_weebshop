@@ -9,7 +9,11 @@
     {{--@endif--}}
     <h1>Producten beheren</h1>
 
-
+    @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">{!! session('success') !!}</div>
+    @elseif(Session::has('fail'))
+        <div class="alert alert-warning" role="alert">{!! session('fail') !!}</div>
+    @endif
     <button><a href="/cms/products/create">Toevoegen</a></button>
 
 

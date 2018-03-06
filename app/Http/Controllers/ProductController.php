@@ -14,14 +14,14 @@ class ProductController extends Controller
         $categories = Category::all();
         $subcategories = Subcategory::all();
         $products = Product::latest()->get();
-        return view('cms.products', compact('categories', 'subcategories', 'products'));
+        return view('cms.products.products', compact('categories', 'subcategories', 'products'));
     }
 
     public function createPage(){
         $categories = Category::all();
         $subcategories = Subcategory::all();
         $products = Product::all();
-        return view('cms.createproduct', compact('categories', 'subcategories', 'products'));
+        return view('cms.products.createproduct', compact('categories', 'subcategories', 'products'));
     }
 
     public function create()
@@ -55,7 +55,9 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('/cms/products');
+        //session()->flash('message', 'Product added succesfully');
+
+        return redirect('/cms/products')->with('success', 'Product added succesfully');
     }
 
     public function edit($id)
@@ -63,7 +65,7 @@ class ProductController extends Controller
         $categories = Category::all();
         $subcategories = Subcategory::all();
         $product = Product::findOrFail($id);
-        return view('cms.editproduct', compact('product', 'categories', 'subcategories'));
+        return view('cms.products.editproduct', compact('product', 'categories', 'subcategories'));
     }
 
     public function update(Product $product, Request $request){
@@ -89,11 +91,14 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('cms/products');
+        return redirect('cms/products')->with('success', 'Product updated succesfully');
     }
 
     public function destroy(Product $product){
         $product->delete();
-        return redirect('/cms/products');
+
+        //session()->flash('message', 'Product deleted succesfully');
+        //flash('Message')->success('Product deleted succesfully');
+        return redirect('/cms/products')->with('success', 'Product deleted succesfully');
     }
 }
