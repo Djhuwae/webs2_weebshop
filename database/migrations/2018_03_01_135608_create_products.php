@@ -23,6 +23,7 @@ class CreateProducts extends Migration
             $table->foreign('categories_id')->references('id')->on('categories');
             $table->integer('subcategories_id')->unsigned();
             $table->foreign('subcategories_id')->references('id')->on('subcategories');
+            $table->timestamps();
         });
 
     }

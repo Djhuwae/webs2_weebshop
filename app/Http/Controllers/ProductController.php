@@ -12,7 +12,7 @@ class ProductController extends Controller
     public function index(){
         $categories = Category::all();
         $subcategories = Subcategory::all();
-        $products = Product::all();
+        $products = Product::latest()->get();
         return view('cms.products', compact('categories', 'subcategories', 'products'));
     }
 
@@ -34,6 +34,8 @@ class ProductController extends Controller
     public function store(){
         $categories = Category::all();
         $subcategories = Subcategory::all();
+
+
         $product = new Product;
         $product->name = request('name');
         $product->price = request('price');
