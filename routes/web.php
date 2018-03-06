@@ -49,6 +49,8 @@ Route::get('/cms/products/{product}/edit', 'ProductController@edit');
 
 Route::post('/cms/products/{product}/edit', 'ProductController@update');
 
+Route::get('/cms/products/{product}/delete', 'ProductController@destroy');
+
 
 
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);

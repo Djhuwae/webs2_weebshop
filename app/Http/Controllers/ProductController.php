@@ -91,4 +91,9 @@ class ProductController extends Controller
 
         return redirect('cms/products');
     }
+
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect('/cms/products');
+    }
 }
