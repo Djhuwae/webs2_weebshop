@@ -30,6 +30,10 @@ Route::get('/about', function () {
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('cart', function(){
+    return view('cart');
+});
 Route::get('/itemList', 'ProductListController@index');
 
 Route::get('/itemList/{category}', 'ProductListController@showCategory');
