@@ -2,7 +2,16 @@
 
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item" ><a href="/itemList">Itemlist</a></li>
+            <li class="breadcrumb-item"><a href="/itemList/{{$category->id}}">{{$category->name}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{$subcategory->name}}</li>
+        </ol>
+    </nav>
     <h1>{{ $subcategory->name }}</h1>
+
 
                         @foreach($products as $product)
                             @if($product->subcategories_id == $subcategory->id)
