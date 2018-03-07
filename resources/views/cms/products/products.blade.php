@@ -7,6 +7,13 @@
             {{--{{$flash}}--}}
         {{--</div>--}}
     {{--@endif--}}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">CMS</li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+        </ol>
+    </nav>
+
     <h1>Producten beheren</h1>
 
     @if(Session::has('success'))

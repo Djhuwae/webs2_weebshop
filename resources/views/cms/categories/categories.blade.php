@@ -2,6 +2,13 @@
 
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">CMS</li>
+            <li class="breadcrumb-item active" aria-current="page">Categories and subcategories</li>
+        </ol>
+    </nav>
+
     <h1>Manage categories and subcategories</h1>
         @if(Session::has('success'))
             <div class="alert alert-success" role="alert">{!! session('success') !!}</div>

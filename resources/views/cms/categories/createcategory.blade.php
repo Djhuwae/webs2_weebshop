@@ -2,6 +2,14 @@
 
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">CMS</li>
+            <li class="breadcrumb-item"><a href="/cms/categories">Categories and subcategories</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Create category</li>
+        </ol>
+    </nav>
+
     <h1>Manage categories</h1>
 
     <div class="col-sm-8">
