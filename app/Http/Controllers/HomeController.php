@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Category;
 use \App\Product;
-
+use DaveJamesMiller\Breadcrumbs;
 
 class HomeController extends Controller
 {
@@ -26,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['breadcrumbs'] = Breadcrumbs::generate();
+        return view('home', $data);
     }
 
     public function getMenu()
