@@ -1,3 +1,31 @@
+<?php
+session_start();
+$product_ids = array();
+session_destroy();
+
+if(filter_input(INPUT_POST, 'add_to_cart')){
+    if(isset($_SESSION['shopping_cart'])){
+
+    }
+    else{ //if shopping cart doesn't exist, create first item.
+        $_SESSION['shopping_cart'][0] = array
+        (
+          'id' => filter_input(INPUT_GET, 'id'),
+            'name' => filter_input(INPUT_POST, 'name'),
+            'price' => filter_input(INPUT_POST, 'price'),
+            'quantity' => filter_input(INPUT_POST, 'quantity')
+        );
+    }
+}
+pre_r($_SESSION);
+
+function pre_r($array){
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,11 +60,11 @@
                         </div>
                     </form>
                 </div>
-                <?php
+
                 }
             }
         }
-        ?>
+
         </div>
     </body>
 </html>
