@@ -18,7 +18,7 @@
 
                         @if($subcategory->categories_id == $category->id)
 
-                            <li role="presentation"><a href="itemList/{{$category->id}}/{{$subcategory->name}}" role="menuitem">
+                            <li role="presentation"><a href="itemList/{{$category->id}}/{{$subcategory->id}}" role="menuitem">
 
                                     {{$subcategory->name}}
 
