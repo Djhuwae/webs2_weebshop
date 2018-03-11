@@ -8,8 +8,15 @@ body {
     padding-top: 54px;
 }
 
+.productimg{
+    max-height: 250px;
+    
+
+}
+
 @media (min-width: 992px) {
     body {
         padding-top: 56px;
     }
 }
+
