@@ -6,7 +6,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'Laravel') }}</title>
+<title>@yield('title')</title>
 
 <!-- Bootstrap settings -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -30,7 +30,6 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Shop Homepage - Start Bootstrap Template</title>
 
 
     <!-- Bootstrap Core CSS -->
@@ -41,25 +40,25 @@
     <link href={{asset('css/shop-homepage.css')}} rel="stylesheet">
     <link href={{asset('css/cmsproduct.css')}} rel="stylesheet">
 
-    <!-- Temporary fix for navbar responsiveness -->
-    <style>
-        .navbar-toggler {
-            z-index: 1;
-        }
+    {{--<!-- Temporary fix for navbar responsiveness -->--}}
+    {{--<style>--}}
+        {{--.navbar-toggler {--}}
+            {{--z-index: 1;--}}
+        {{--}--}}
 
-        @media (max-width: 576px) {
-            nav > .container {
-                width: 100%;
-            }
-        }
-        /* Temporary fix for img-fluid sizing within the carousel */
+        {{--@media (max-width: 576px) {--}}
+            {{--nav > .container {--}}
+                {{--width: 100%;--}}
+            {{--}--}}
+        {{--}--}}
+        {{--/* Temporary fix for img-fluid sizing within the carousel */--}}
 
-        .carousel-item.active,
-        .carousel-item-next,
-        .carousel-item-prev {
-            display: block;
-        }
-    </style>
+        {{--.carousel-item.active,--}}
+        {{--.carousel-item-next,--}}
+        {{--.carousel-item-prev {--}}
+            {{--display: block;--}}
+        {{--}--}}
+    {{--</style>--}}
 
 </head>
 
