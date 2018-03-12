@@ -34,11 +34,12 @@
 
     <!-- Bootstrap Core CSS -->
     <link href={{asset('css/bootstrap.min.css')}} rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
     <link href={{asset('css/shop-homepage.css')}} rel="stylesheet">
     <link href={{asset('css/cmsproduct.css')}} rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     {{--<!-- Temporary fix for navbar responsiveness -->--}}
     {{--<style>--}}
@@ -81,14 +82,20 @@
                     <a class="nav-link" href="/about">About</a>
                 </li>
 
-                @include('layouts.menu')
+                {{--@include('layouts.menu')--}}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/shoppingcart"><i class="fa fa-shopping-cart"></i> Shopping Cart
+                        <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                    </a>
+                </li>
                 @if (Auth::guest())
                     <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="nav-link" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                        <a href="#" class="nav-link " class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="fa fa-user"></i>{{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">

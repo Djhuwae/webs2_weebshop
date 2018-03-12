@@ -58,14 +58,14 @@
                         @foreach($productChunk as $product)
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="card h-100">
-                                    <a href="#"><img class="card-img-top img-fluid productimg" src={{$product->imageurl }} alt=""></a>
+                                    <a href="#"><img class="card-img-top img-fluid productimg" src={{$product->imageurl}} alt=""></a>
                                     <div class="card-block">
                                         <h4 class="card-title"><a href="#">{{$product->name }}</a></h4>
                                         <h5>$ {{ $product->price }}</h5>
                                         <p class="card-text">{{ $product->description }}</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="#" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                                        <a href="{{route('addToCart', ['id'=>$product->id ])}}" class="btn btn-success pull-right" role="button">Add to Cart</a>
                                     </div>
                                 </div>
                             </div>

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use App\Category;
 use App\Subcategory;
 use App\Product;
+use App\Cart;
 
 Auth::routes();
 
@@ -34,6 +35,18 @@ Route::get('/', function () {
 Route::get('cart', function(){
     return view('cart');
 });
+
+Route::get('/add-to-cart/{id}',[
+    'uses' => 'ProductController@getAddToCart',
+    'as' => 'addToCart'
+]);
+
+
+Route::get('/shoppingcart',[
+    'uses' => 'ProductController@getCart',
+    'as' => 'shoppingCart'
+]);
+
 Route::get('/itemList', 'ProductListController@index');
 
 Route::get('/itemList/{category}', 'ProductListController@showCategory');
