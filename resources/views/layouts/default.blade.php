@@ -86,7 +86,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/shoppingcart"><i class="fa fa-shopping-cart"></i> Shopping Cart
-                        <span class="badge">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                        <span class="badge badge-primary badge-pill">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                     </a>
                 </li>
                 @if (Auth::guest())

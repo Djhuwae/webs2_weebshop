@@ -10,11 +10,11 @@ namespace App\Http\Controllers;
 
  use \App\Product;
  use \App\Cart;
- use Illuminate\Support\Facades\Session;
  use Illuminate\Http\Request;
+ use Illuminate\Support\Facades\Session;
 
 
- class ShoppingCartController
+ class ShoppingCartController extends Controller
 {
 
      public function index()
@@ -28,6 +28,7 @@ namespace App\Http\Controllers;
         $cart->add($product, $product->id);
 
         $request->session()->put('cart',$cart);
+//        dd($request->session()->get('cart'));
         return redirect()->route('home');
     }
 

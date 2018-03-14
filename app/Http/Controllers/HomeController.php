@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use \App\Category;
 use \App\Product;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
-use \App\Cart;
+
 
 class HomeController extends Controller
 {
