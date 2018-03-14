@@ -37,13 +37,13 @@ Route::get('cart', function(){
 });
 
 Route::get('/add-to-cart/{id}',[
-    'uses' => 'ProductController@getAddToCart',
+    'uses' => 'ShoppingCartController@getAddToCart',
     'as' => 'addToCart'
 ]);
 
 
 Route::get('/shoppingcart',[
-    'uses' => 'ProductController@getCart',
+    'uses' => 'ShoppingCartController@getCart',
     'as' => 'shoppingCart'
 ]);
 

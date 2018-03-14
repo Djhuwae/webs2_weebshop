@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Category;
 use \App\Product;
-use DaveJamesMiller\Breadcrumbs;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use \App\Cart;
 
 class HomeController extends Controller
 {
@@ -26,8 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['breadcrumbs'] = Breadcrumbs::generate();
-        return view('home', $data);
+        $products = Product::all();
+        return view('home', ['products' => $products]);
     }
 
     public function getMenu()
@@ -37,4 +39,6 @@ class HomeController extends Controller
 
         return view('home', compact('categories', 'products'));
     }
+
+
 }

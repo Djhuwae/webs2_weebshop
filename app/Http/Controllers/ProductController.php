@@ -17,7 +17,7 @@ class ProductController extends Controller
         $categories = Category::all();
         $subcategories = Subcategory::all();
         $products = Product::latest()->get();
-        $products = DB::table('products')->paginate(6);
+
         return view('cms.products.products', compact('categories', 'subcategories', 'products'));
     }
 
@@ -98,24 +98,7 @@ class ProductController extends Controller
         return redirect('cms/products')->with('success', 'Product updated succesfully');
     }
 
-    public function getAddToCart(Request $request, $id){
-        $product = Product::find($id);
-        $oldCart = Session::has('cart') ? Session::get('cart') : null;
-        $cart = new Cart($oldCart);
-        $cart->add($product, $product->id);
 
-        $request->session()->put('cart',$cart);
-        return redirect()->route('home');
-    }
-
-    public function getCart() {
-        if (!Session::has('cart')) {
-            return view('shoppingcart');
-        }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        return view('shoppingcart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
-    }
 
     public function destroy(Product $product){
         $product->delete();
