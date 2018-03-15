@@ -10,7 +10,7 @@
 
             <div class="col-lg-3">
 
-                <h1 class="my-4">Weebshop</h1>
+                <h1 class="my-4"> </h1>
                 <div class="list-group">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -35,13 +35,13 @@
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                            <img class="d-block img-fluid" src="https://www.ianvisits.co.uk/blog/wp-content/uploads/2018/01/1379257_Latvian_ShowDetailHeaderDesktop_99609434-7178-e711-8175-020165574d09.jpg" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                            <img class="d-block img-fluid" src="http://thegeekiary.com/wp-content/uploads/2018/01/shokugeki-no-soma.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                            <img class="d-block img-fluid" src="http://wallpaperlepi.com/wp-content/uploads/2015/09/Logo-One-Piece-Wallpaper.jpeg" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -53,6 +53,7 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+
                 @foreach($products->chunk(3) as $productChunk )
                     <div class="row">
                         @foreach($productChunk as $product)
@@ -65,7 +66,7 @@
                                         <p class="card-text">{{ $product->description }}</p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="{{route('addToCart', ['id'=>$product->id ])}}" class="btn btn-success pull-right" role="button">Add to Cart</a>
+                                        <a href="{{route('addToCart', ['id'=>$product->id ])}}" class="btn btn-success" role="button">Add to Cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -74,6 +75,7 @@
                     <!-- /.row -->
                 @endforeach
             </div>
+
             <!-- /.col-lg-9 -->
 
         </div>

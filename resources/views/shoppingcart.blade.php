@@ -2,14 +2,15 @@
 
 @section('title','Shopping Cart')
 
+
 @section('content')
     @if(Session::has('cart'))
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 ">
+            <div class="col-sm-12 col-md-6 col-lg-8 container">
                 <ul class="list-group">
                     @foreach($products as $product)
-                        <li class="list-group-item">
-                            <span class="badge badge-primary badge-pill">{{ $product['qty'] }}</span>
+                       <li class="list-group-item">
+                            <img style="max-height: 64px; max-width: 64px;" src="{{$product['item']['imageurl']}}">
                             <strong>{{ $product['item']['name'] }}</strong>
                             <span class="label label-success">{{ $product['price'] }}</span>
                             <div class="btn-group">
@@ -19,25 +20,26 @@
                                     <li><a href="#">Reduce All</a></li>
                                 </ul>
                             </div>
+                            <span class="badge badge-primary badge-pill">{{ $product['qty'] }}</span>
                         </li>
                     @endforeach
                 </ul>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 container">
                 <strong>Total: {{ $totalPrice }}</strong>
             </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 container">
                 <button type="button" class="btn btn-success">Checkout</button>
             </div>
         </div>
     @else
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 container">
                 <h2>No Items in Cart!</h2>
             </div>
         </div>

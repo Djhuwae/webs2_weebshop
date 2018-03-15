@@ -34,32 +34,33 @@
 
     <!-- Bootstrap Core CSS -->
     <link href={{asset('css/bootstrap.min.css')}} rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">--}}
 
     <!-- Custom CSS -->
     <link href={{asset('css/shop-homepage.css')}} rel="stylesheet">
-    <link href={{asset('css/cmsproduct.css')}} rel="stylesheet">
+    <link href={{asset('css/app.css')}} rel="stylesheet">
+    {{--<link href={{asset('css/cmsproduct.css')}} rel="stylesheet">--}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    {{--<!-- Temporary fix for navbar responsiveness -->--}}
-    {{--<style>--}}
-        {{--.navbar-toggler {--}}
-            {{--z-index: 1;--}}
-        {{--}--}}
+    <!-- Temporary fix for navbar responsiveness -->
+    <style>
+        .navbar-toggler {
+            z-index: 1;
+        }
 
-        {{--@media (max-width: 576px) {--}}
-            {{--nav > .container {--}}
-                {{--width: 100%;--}}
-            {{--}--}}
-        {{--}--}}
-        {{--/* Temporary fix for img-fluid sizing within the carousel */--}}
+        @media (max-width: 576px) {
+            nav > .container {
+                width: 100%;
+            }
+        }
+        /* Temporary fix for img-fluid sizing within the carousel */
 
-        {{--.carousel-item.active,--}}
-        {{--.carousel-item-next,--}}
-        {{--.carousel-item-prev {--}}
-            {{--display: block;--}}
-        {{--}--}}
-    {{--</style>--}}
+        .carousel-item.active,
+        .carousel-item-next,
+        .carousel-item-prev {
+            display: block;
+        }
+    </style>
 
 </head>
 
