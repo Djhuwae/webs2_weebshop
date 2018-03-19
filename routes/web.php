@@ -49,8 +49,20 @@ Route::get('/shoppingcart',[
 
 Route::get('/checkout', [
    'uses' => 'ShoppingCartController@getCheckout',
+    'as' => 'checkout',
+    'middleware' => 'auth'
+]);
+
+Route::post('/checkout', [
+    'uses' => 'ShoppingCartController@postCheckout',
     'as' => 'checkout'
 ]);
+
+Route::get('/profile',[
+    'uses' => 'UserController@getProfile',
+    'as' => 'auth.profile',
+    'middleware' => 'auth'
+    ]);
 
 Route::get('/itemList', 'ProductListController@index');
 

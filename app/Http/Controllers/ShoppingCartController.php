@@ -10,7 +10,10 @@ namespace App\Http\Controllers;
 
  use \App\Product;
  use \App\Cart;
+ use \App\Order;
+
  use Illuminate\Http\Request;
+ use Illuminate\Support\Facades\Auth;
  use Illuminate\Support\Facades\Session;
 
 
@@ -50,6 +53,30 @@ namespace App\Http\Controllers;
         $cart = new Cart($oldCart);
         $total = $cart->totalPrice;
         return view('checkout', ['total' => $total]);
+    }
+
+    public function postCheckout(Request $request){
+        if (!Session::has('cart')) {
+            return redirect()->route('shoppingcart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        try{
+            $order = new Order();
+            $order->cart = serialize($cart);
+            $order->address = $request->input('address');
+            $order->city = $request->input('city');
+            $order->country = $request->input('country');
+            $order->name = $request->input('name');
+
+            Auth::user()->orders()->save($order);
+        }catch (\Exception $e){
+            return redirect()->route('checkout')->with('error', $e->getMessage());
+        }
+
+        Session::forget('cart');
+        return redirect()->route('home')->with('success', 'Succesfully purchased products!');
     }
 
 

@@ -86,7 +86,7 @@
                 {{--@include('layouts.menu')--}}
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/shoppingcart"><i class="fa fa-shopping-cart"></i> Shopping Cart
+                    <a class="nav-link" href="{{route('shoppingCart')}}"><i class="fa fa-shopping-cart"></i> Shopping Cart
                         <span class="badge badge-primary badge-pill">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                     </a>
                 </li>
@@ -108,6 +108,11 @@
                             <li>
                                 <a href="/cms/categories">
                                     CMS categories
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('auth.profile')}}">
+                                    Profile
                                 </a>
                             </li>
                             <li>
