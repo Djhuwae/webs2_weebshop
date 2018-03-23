@@ -45,7 +45,7 @@ namespace App\Http\Controllers;
         } else{
             Session::forget('cart');
         }
-        
+
         return redirect()->route('shoppingCart');
     }
 

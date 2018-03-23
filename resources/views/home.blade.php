@@ -63,14 +63,26 @@
                     </a>
                 </div>
 
+                <div class="row">
+                    <div class="col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-3">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
+                            </div>
+                            <input id="search" name="search" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="You can search for items here">
+                        </div>
+                        <div id="result"></div>
+                    </div>
+                </div><br>
+
                 @foreach($products->chunk(3) as $productChunk )
                     <div class="row">
                         @foreach($productChunk as $product)
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="card h-100">
-                                    <a href="#"><img class="card-img-top img-fluid productimg" src={{$product->imageurl}} alt=""></a>
+                                    <a href="/itemList/{{$product->categories_id}}/{{$product->subcategories_id}}/{{$product->id}}"><img class="card-img-top img-fluid productimg" src={{$product->imageurl}} alt=""></a>
                                     <div class="card-block">
-                                        <h4 class="card-title"><a href="#">{{$product->name }}</a></h4>
+                                        <h4 class="card-title"><a href="/itemList/{{$product->categories_id}}/{{$product->subcategories_id}}/{{$product->id}}">{{$product->name }}</a></h4>
                                         <h5>$ {{ $product->price }}</h5>
                                         <p class="card-text">{{ $product->description }}</p>
                                     </div>
@@ -92,4 +104,28 @@
 
     </div>
     <!-- /.container -->
+
+    <script>
+        $(document).ready(function(){
+            $('#search').keyup(function (){
+                var txt = $(this).val();
+                if(txt != ''){
+
+                }else{
+                    $('#result').html('');
+                    $.ajax({
+                        url:"fetch.php",
+                        method: "post",
+                        data:{ search:txt},
+                        dataType:"text",
+                        success:function(data){
+                            $('#result').html(data);
+                        }
+                    })
+                }
+            });
+        });
+
+    </script>
 @endsection
+

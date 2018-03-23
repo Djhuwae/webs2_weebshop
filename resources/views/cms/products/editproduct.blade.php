@@ -51,7 +51,7 @@
                     <option selected>Kies een subcategorie</option>
                     @foreach($subcategories as $subcategory)
                         {{--@if($subcategory->categories_id == $category->id)--}}
-                        <option value="{{ $subcategory->name }}" {{$product->subcategories_id == $subcategory->id ? 'selected': ''}}>{{ ucfirst($subcategory->name) }}</option>
+                        <option value="{{ $subcategory->name }}" {{$subcategory->categories_id == $category->id ? 'selected': ''}}>{{ ucfirst($subcategory->name) }}</option>
                         {{--@endif--}}
                     @endforeach
                 </select>

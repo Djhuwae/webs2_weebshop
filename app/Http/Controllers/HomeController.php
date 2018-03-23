@@ -27,10 +27,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $products = Product::all();
-        $paginate = DB::table('products')->simplePaginate(6);
-        return view('home', compact('paginate', 'products') );
+    {   $categories = Category::all();
+        $subcategories = Subcategory::all();
+        $products = Product::paginate(6);
+        return view('home',compact('products', 'categories','subcategories'));
     }
 
     public function getMenu()
