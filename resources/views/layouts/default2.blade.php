@@ -33,9 +33,9 @@
 
     <!-- Bootstrap Core CSS -->
     <link href={{asset('css/bootstrap.min.css')}} rel="stylesheet">
-    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">--}}
+{{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">--}}
 
-    <!-- Custom CSS -->
+<!-- Custom CSS -->
     <link href={{asset('css/shop-homepage.css')}} rel="stylesheet">
     <link href={{asset('css/app.css')}} rel="stylesheet">
     {{--<link href={{asset('css/cmsproduct.css')}} rel="stylesheet">--}}
@@ -99,12 +99,12 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="../cms/products">
+                                <a href="/cms/products">
                                     CMS products
                                 </a>
                             </li>
                             <li>
-                                <a href="../cms/categories">
+                                <a href="/cms/categories">
                                     CMS categories
                                 </a>
                             </li>
@@ -146,13 +146,13 @@
 </footer>
 
 <!-- jQuery Version 3.1.1 -->
-<script src="js/jquery.js"></script>
+<script src="../../../js/jquery.js"></script>
 
 <!-- Tether -->
-<script src="js/tether.min.js"></script>
+<script src="../../../js/tether.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../../../js/bootstrap.min.js"></script>
 
 </body>
 

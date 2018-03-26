@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default2')
 
 @section('title','Profile - WeebShop')
 
@@ -30,3 +30,4 @@
                 </div>
         </div>
 @endsection
+

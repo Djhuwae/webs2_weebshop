@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default2')
 
 
 @section('content')
@@ -10,7 +10,7 @@
         </ol>
     </nav>
 
-    <h1>Producten beheren</h1>
+    <h1>Manage products</h1>
 
     <div class="col-sm-8">
         <h2>Create product</h2>
