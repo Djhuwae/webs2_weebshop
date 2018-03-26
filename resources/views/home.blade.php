@@ -66,12 +66,17 @@
                 <div class="row">
                     <div class="col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-3">
                         <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
-                            </div>
-                            <input id="search" name="search" type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="You can search for items here">
+                            <form action="/search" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="q" placeholder="Search Products"> <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
                         </div>
-                        <div id="result"></div>
                     </div>
                 </div><br>
 

@@ -84,7 +84,6 @@
                 </li>
 
                 {{--@include('layouts.menu')--}}
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('shoppingCart')}}"><i class="fa fa-shopping-cart"></i> Shopping Cart
                         <span class="badge badge-primary badge-pill">{{Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
@@ -101,12 +100,12 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="/cms/products">
+                                <a href="../cms/products">
                                     CMS products
                                 </a>
                             </li>
                             <li>
-                                <a href="/cms/categories">
+                                <a href="../cms/categories">
                                     CMS categories
                                 </a>
                             </li>

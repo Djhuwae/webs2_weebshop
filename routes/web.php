@@ -17,6 +17,7 @@ use App\Category;
 use App\Subcategory;
 use App\Product;
 use App\Cart;
+use Illuminate\Support\Facades\Input;
 
 Auth::routes();
 
@@ -35,6 +36,11 @@ Route::get('/', function () {
 Route::get('/cart', function(){
     return view('cart');
 });
+
+Route::get('/search', function(){
+    return view('search');
+});
+
 
 Route::get('/add-to-cart/{id}',[
     'uses' => 'ShoppingCartController@getAddToCart',
@@ -73,6 +79,14 @@ Route::get('/profile',[
     'middleware' => 'auth'
     ]);
 
+Route::any('/search',function(){
+    $q = Input::get ( 'q' );
+    $product = Product::where('name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();
+    if(count($product) > 0)
+        return view('search')->withDetails($product)->withQuery ( $q );
+    else return view ('search')->withMessage('No Details found. Try to search again !');
+});
+
 Route::get('/itemList', 'ProductListController@index');
 
 Route::get('/itemList/{category}', 'ProductListController@showCategory');
@@ -83,6 +97,12 @@ Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListControlle
 
 
 Route::get('/cms/products', 'ProductController@index');
+Route::get('/cms/products',[
+    'uses' => 'UserController@getProfile',
+    'as' => 'auth.profile',
+    'middleware' => 'auth'
+]);
+
 
 Route::get('/cms/products/create', 'ProductController@createPage');
 
