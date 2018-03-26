@@ -10,20 +10,22 @@
         </ol>
     </nav>
 
+    <div class="container">
+        <div class="col-sm-8">
+            <h2>Add category</h2>
+            <hr>
 
-    <div class="col-sm-8">
-        <h2>Add category</h2>
-        <hr>
+            <form method="POST" action="/cms/categories">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="'form-control" id="name" name="name" required>
+                </div>
 
-        <form method="POST" action="/cms/categories">
-            {{ csrf_field() }}
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="'form-control" id="name" name="name" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
     </div>
+    <br>
 
 @endsection

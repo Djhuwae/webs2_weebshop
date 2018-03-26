@@ -10,31 +10,34 @@
         </ol>
     </nav>
 
-    <div class="col-sm-8">
-        <h2>Add category</h2>
-        <hr>
+    <div class="container">
+        <div class="col-sm-8">
+            <h2>Add subcategory</h2>
+            <hr>
 
-        <form method="POST" action="/cms/subcategories">
-            {{ csrf_field() }}
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="'form-control" id="name" name="name" required>
-            </div>
+            <form method="POST" action="/cms/subcategories">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="'form-control" id="name" name="name" required>
+                </div>
 
-            <div class="form-group">
-                <label for="cat">Category</label>
-                <select id="cat" name="cat" class="custom-select">
-                    <option selected>Choose a category</option>
-                    @foreach($categories as $category)
-                        <option value="{{ $category->name }}" >{{ ucfirst($category->name) }}</option>
+                <div class="form-group">
+                    <label for="cat">Category</label>
+                    <select id="cat" name="cat" class="custom-select">
+                        <option selected>Choose a category</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->name }}" >{{ ucfirst($category->name) }}</option>
 
-                    @endforeach
+                        @endforeach
 
-                </select>
-            </div>
+                    </select>
+                </div>
 
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
     </div>
+    <br>
 
 @endsection
