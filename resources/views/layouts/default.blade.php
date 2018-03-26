@@ -76,7 +76,7 @@
         <a class="navbar-brand" href="/">Weebshop</a>
         <div class="collapse navbar-collapse" id="navbarExample">
             <ul class="navbar-nav ml-auto" class="dropdown-menu" role="menu">
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -94,18 +94,18 @@
                     <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="nav-link " class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a  class="nav-link " class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa fa-user"></i>{{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="../cms/products">
+                                <a href="{{route('cms.products')}}">
                                     CMS products
                                 </a>
                             </li>
                             <li>
-                                <a href="../cms/categories">
+                                <a href="{{route('cms.categories')}}">
                                     CMS categories
                                 </a>
                             </li>

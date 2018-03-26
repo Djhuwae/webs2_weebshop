@@ -96,13 +96,11 @@ Route::get('/itemList/{category}/{subcategory}', 'ProductListController@showSubc
 Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
 
 
-Route::get('/cms/products', 'ProductController@index');
 Route::get('/cms/products',[
-    'uses' => 'UserController@getProfile',
-    'as' => 'auth.profile',
+    'uses' => 'ProductController@index',
+    'as' => 'cms.products',
     'middleware' => 'auth'
 ]);
-
 
 Route::get('/cms/products/create', 'ProductController@createPage');
 
@@ -115,7 +113,11 @@ Route::post('/cms/products/{product}/edit', 'ProductController@update');
 Route::get('/cms/products/{product}/delete', 'ProductController@destroy');
 
 
-Route::get('/cms/categories', 'CategoryController@index');
+Route::get('/cms/categories',[
+    'uses' => 'CategoryController@index',
+    'as' => 'cms.categories',
+    'middleware' => 'auth'
+]);
 
 Route::get('/cms/categories/create', 'CategoryController@create');
 
