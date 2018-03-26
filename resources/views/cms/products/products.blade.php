@@ -9,7 +9,7 @@
         </ol>
     </nav>
 
-    <h1>Producten beheren</h1>
+    <h1>Manage products</h1>
 
     @if(Session::has('success'))
         <div class="row">
@@ -24,7 +24,7 @@
             </div>
         </div>
     @endif
-    <a class="btn btn-success" href="/cms/products/create">Toevoegen</a>
+    <a class="btn btn-success" href="/cms/products/create">Add product</a>
 
     @foreach($products->chunk(3) as $productChunk )
         <div class="row">
