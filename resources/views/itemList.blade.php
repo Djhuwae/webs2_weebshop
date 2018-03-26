@@ -12,7 +12,7 @@
 
     @foreach($categories as $category)
         <ul>
-            <li ><a  role="button" aria-expanded="false" href="/itemList/{{$category->id}}">{{$category->name}}<span class="caret"></span></a>
+            <li ><a  role="button" aria-expanded="false" href="/itemList/{{$category->id}}">{{$category->name}}</a>
                 <ul  role="menu" >
                     @foreach($subcategories as $subcategory)
 

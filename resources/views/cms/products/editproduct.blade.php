@@ -10,8 +10,6 @@
         </ol>
     </nav>
 
-    <h1>Manage products</h1>
-
     <div class="col-sm-8">
         <h2>Edit product: {!! $product->name !!}</h2>
         <hr>
