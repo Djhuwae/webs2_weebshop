@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default2')
 
 
 @section('content')
@@ -9,22 +9,22 @@
             <li class="breadcrumb-item active" aria-current="page">Edit category</li>
         </ol>
     </nav>
+    <div class="container">
+        <div class="col-sm-8">
+            <h2>Edit category: {!! $category->name !!}</h2>
+            <hr>
 
-    <h1>Manage categories and subcategories</h1>
+            <form method="POST" action="/cms/categories/{{$category->id}}/edit" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="'form-control" id="name" name="name" value="{{$category->name}}" required>
+                </div>
 
-    <div class="col-sm-8">
-        <h2>Edit category: {!! $category->name !!}</h2>
-        <hr>
-
-        <form method="POST" action="/cms/categories/{{$category->id}}/edit" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="'form-control" id="name" name="name" value="{{$category->name}}" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
     </div>
+    <br>
 
 @endsection

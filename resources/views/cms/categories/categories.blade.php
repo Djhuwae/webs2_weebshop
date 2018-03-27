@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default2')
 
 
 @section('content')
@@ -20,7 +20,7 @@
 
     @foreach($categories as $category)
         <ul>
-            <li >{{$category->name}}<span class="caret"></span>
+            <li >{{$category->name}}
                 <button><a href="/cms/categories/{{$category->id}}/edit">Edit</a></button>
                 <button class="btn btn-danger m-2"><a href="/cms/categories/{{$category->id}}/delete" >Delete</a></button>
                 <ul  role="menu" >

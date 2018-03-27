@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default2')
 
 
 @section('content')
@@ -17,7 +17,7 @@
                             @if($product->subcategories_id == $subcategory->id)
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 mb-4">
-                                        <div class="card h-100">
+                                        <div class="card">
                                             <a href="/itemList/{{$category->id}}/{{$subcategory->id}}/{{$product->id}}"><img class="card-img-top img-fluid" src={{$product->imageurl }} alt=""></a>
                                             <div class="card-block">
                                                 <h4 class="card-title"><a href="/itemList/{{$category->id}}/{{$subcategory->id}}/{{$product->id}}">{{$product->name }}</a></h4>

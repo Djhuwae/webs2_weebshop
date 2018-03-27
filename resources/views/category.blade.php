@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default2')
 
 
 @section ('content')
@@ -22,7 +22,7 @@
                                     @foreach($products as $product)
                                         @if($product->subcategories_id == $subcategory->id)
                                             <div class="row">
-                                                <div class="col-lg-4 col-md-6 mb-4">
+                                                <div class="col-lg-2 col-md-6 mb-4">
                                                     <div class="card h-100">
                                                         <a href="/itemList/{{$category->id}}/{{$subcategory->id}}/{{$product->id}}"><img class="card-img-top img-fluid" src={{$product->imageurl }} alt=""></a>
                                                         <div class="card-block">
