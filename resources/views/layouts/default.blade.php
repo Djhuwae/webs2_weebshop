@@ -41,26 +41,6 @@
     {{--<link href={{asset('css/cmsproduct.css')}} rel="stylesheet">--}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Temporary fix for navbar responsiveness -->
-    <style>
-        .navbar-toggler {
-            z-index: 1;
-        }
-
-        @media (max-width: 576px) {
-            nav > .container {
-                width: 100%;
-            }
-        }
-        /* Temporary fix for img-fluid sizing within the carousel */
-
-        .carousel-item.active,
-        .carousel-item-next,
-        .carousel-item-prev {
-            display: block;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -133,8 +113,9 @@
     </div>
 </nav>
 
+<div class="content">
 @yield('content')
-
+</div>
 
 
 <!-- Footer -->
