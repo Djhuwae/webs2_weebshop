@@ -113,9 +113,9 @@
     </div>
 </nav>
 
-<div class="content">
+
 @yield('content')
-</div>
+
 
 
 <!-- Footer -->
