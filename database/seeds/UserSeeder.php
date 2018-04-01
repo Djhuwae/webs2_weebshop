@@ -13,7 +13,7 @@ class UserSeeder
     {
         DB::table('users')->insert([
             'id' => 1,
-            'email' => 'admin@admin',
+            'email' => 'admin@admin.nl',
             'password' => 'admin',
             'admin' => '1'
         ]);
