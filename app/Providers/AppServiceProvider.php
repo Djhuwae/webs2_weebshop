@@ -18,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         if(env('REDIRECT_HTTPS')) {
             $url->formatScheme('https');
         }
+        Schema::defaultStringLength(191);
     }
 
     /**

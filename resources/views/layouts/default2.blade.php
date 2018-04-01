@@ -98,16 +98,20 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="/cms/products">
-                                    CMS products
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/cms/categories">
-                                    CMS categories
-                                </a>
-                            </li>
+                            @if(Auth::check())
+                                @if (Auth::user()->isAdmin())
+                                    <li>
+                                        <a href="{{route('cms.products')}}">
+                                            CMS products
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('cms.categories')}}">
+                                            CMS categories
+                                        </a>
+                                    </li>
+                                @endif
+                            @endif
                             <li>
                                 <a href="{{route('auth.profile')}}">
                                     Profile
