@@ -58,7 +58,7 @@
 
                 <div class="form-group">
                     <label for="img">Image URL</label>
-                    <input type="url" class="'form-control" id="img" name="img" value="{{$product->imageurl}}">
+                    <input type="url" class="'form-control" id="img" name="img" value="{{$product->imageurl}}" required>
 
 
                 </div>

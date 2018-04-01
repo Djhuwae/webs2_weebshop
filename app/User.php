@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'admin',
     ];
 
     /**
@@ -27,7 +28,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     public function orders(){
         return $this->hasMany('App\Order');
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function isAdmin(){
+        return $this->admin == '1'; //mysql table column
+    }
+
+
 }

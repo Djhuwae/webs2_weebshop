@@ -87,59 +87,70 @@ Route::any('/search',function(){
     else return view ('search')->withMessage('No Details found. Try to search again !');
 });
 
-Route::get('/itemList', 'ProductListController@index');
+Route::prefix('itemList')->group(function () {
+    Route::get('/', 'ProductListController@index');
 
-Route::get('/itemList/{category}', 'ProductListController@showCategory');
+    Route::get('/{category}', 'ProductListController@showCategory');
 
-Route::get('/itemList/{category}/{subcategory}', 'ProductListController@showSubcategory');
+    Route::get('/{category}/{subcategory}', 'ProductListController@showSubcategory');
 
-Route::get('/itemList/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
-
-
-Route::get('/cms/products',[
-    'uses' => 'ProductController@index',
-    'as' => 'cms.products',
-    'middleware' => 'auth'
-]);
-
-Route::get('/cms/products/create', 'ProductController@createPage');
-
-Route::post('/cms/products', 'ProductController@store');
-
-Route::get('/cms/products/{product}/edit', 'ProductController@edit');
-
-Route::post('/cms/products/{product}/edit', 'ProductController@update');
-
-Route::get('/cms/products/{product}/delete', 'ProductController@destroy');
+    Route::get('/{category}/{subcategory}/{product}', 'ProductListController@showProduct');
+});
 
 
-Route::get('/cms/categories',[
-    'uses' => 'CategoryController@index',
-    'as' => 'cms.categories',
-    'middleware' => 'auth'
-]);
-
-Route::get('/cms/categories/create', 'CategoryController@create');
-
-Route::post('/cms/categories', 'CategoryController@store');
-
-Route::get('/cms/categories/{category}/edit', 'CategoryController@edit');
-
-Route::post('/cms/categories/{category}/edit', 'CategoryController@update');
-
-Route::get('/cms/categories/{category}/delete', 'CategoryController@destroy');
+Route::group(['prefix'=>'cms', 'middleware'=> ['auth', 'admin']], function(){
 
 
+    Route::prefix('products')->group(function () {
+        Route::get('/',[
+            'uses' => 'ProductController@index',
+            'as' => 'cms.products',
+            'middleware' => 'admin'
+        ]);
 
-Route::get('/cms/subcategories/create', 'SubcategoryController@create');
+        Route::get('/create', 'ProductController@createPage');
 
-Route::post('/cms/subcategories', 'SubcategoryController@store');
+        Route::post('/', 'ProductController@store');
 
-Route::get('/cms/subcategories/{subcategory}/edit', 'SubcategoryController@edit');
+        Route::get('/{product}/edit', 'ProductController@edit');
 
-Route::post('/cms/subcategories/{subcategory}/edit', 'SubcategoryController@update');
+        Route::post('/{product}/edit', 'ProductController@update');
 
-Route::get('/cms/subcategories/{subcategory}/delete', 'SubcategoryController@destroy');
+        Route::get('/{product}/delete', 'ProductController@destroy');
+    });
+
+
+    Route::prefix('categories')->group(function () {
+        Route::get('/',[
+            'uses' => 'CategoryController@index',
+            'as' => 'cms.categories',
+            'middleware' => 'admin'
+        ]);
+
+        Route::get('/create', 'CategoryController@create');
+
+        Route::post('/', 'CategoryController@store');
+
+        Route::get('/{category}/edit', 'CategoryController@edit');
+
+        Route::post('/{category}/edit', 'CategoryController@update');
+
+        Route::get('/{category}/delete', 'CategoryController@destroy');
+    });
+
+    Route::prefix('subcategories')->group(function () {
+        Route::get('/create', 'SubcategoryController@create');
+
+        Route::post('/', 'SubcategoryController@store');
+
+        Route::get('/{subcategory}/edit', 'SubcategoryController@edit');
+
+        Route::post('/{subcategory}/edit', 'SubcategoryController@update');
+
+        Route::get('/{subcategory}/delete', 'SubcategoryController@destroy');
+    });
+
+});
 
 
 Route::get('/', ['as' => 'home', 'uses'=> 'HomeController@getMenu']);
