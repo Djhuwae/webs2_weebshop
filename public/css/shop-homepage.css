@@ -15,11 +15,6 @@
     width: 900px;
 }
 
-.card{
-    display:inline-block;
-}
-
-
 .navbar-toggler {
     z-index: 1;
 }
