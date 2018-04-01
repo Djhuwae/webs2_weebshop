@@ -32,11 +32,7 @@ class User extends Authenticatable
     public function orders(){
         return $this->hasMany('App\Order');
     }
-
-    public function roles()
-    {
-        return $this->belongsToMany('App\Role');
-    }
+    
 
     public function isAdmin(){
         return $this->admin == '1'; //mysql table column

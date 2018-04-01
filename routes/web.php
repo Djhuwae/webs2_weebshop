@@ -105,7 +105,6 @@ Route::group(['prefix'=>'cms', 'middleware'=> ['auth', 'admin']], function(){
         Route::get('/',[
             'uses' => 'ProductController@index',
             'as' => 'cms.products',
-            'middleware' => 'admin'
         ]);
 
         Route::get('/create', 'ProductController@createPage');
@@ -124,7 +123,6 @@ Route::group(['prefix'=>'cms', 'middleware'=> ['auth', 'admin']], function(){
         Route::get('/',[
             'uses' => 'CategoryController@index',
             'as' => 'cms.categories',
-            'middleware' => 'admin'
         ]);
 
         Route::get('/create', 'CategoryController@create');

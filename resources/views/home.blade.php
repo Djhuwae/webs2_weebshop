@@ -11,6 +11,12 @@
             </div>
         </div>
     </div>
+    @elseif(Session::has('warning'))
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+                <div class="alert alert-warning" role="alert">{!! session('warning') !!}</div>
+            </div>
+        </div>
     @endif
     <!-- Page Content -->
     <div class="container">

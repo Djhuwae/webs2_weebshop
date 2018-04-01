@@ -19,6 +19,6 @@ class Admin
         if(Auth::check() && Auth::user()->isAdmin()){
             return $next($request);
         }
-        return redirect('login');
+        return redirect('/')->with('warning', 'You have no access to this page');
     }
 }
