@@ -20,14 +20,14 @@ class UserSeeder extends Seeder
                 'id' => 1,
                 'name' => 'admin',
                 'email' => 'admin@admin.nl',
-                'password' => 'admin1',
+                'password' => bcrypt('admin1'),
                 'admin' => 1,
             ],
             [
                 'id' => 2,
                 'name' => 'donnie',
                 'email' => 'donnie@donnie.nl',
-                'password' => 'donnie1',
+                'password' => bcrypt('donnie1'),
                 'admin' => 0
             ],
             ];
