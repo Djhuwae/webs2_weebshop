@@ -21,14 +21,14 @@ class UserSeeder extends Seeder
                 'name' => 'admin',
                 'email' => 'admin@admin.nl',
                 'password' => 'admin',
-                'admin' => '1',
+                'admin' => 1,
             ],
             [
                 'id' => 2,
                 'name' => 'donnie',
                 'email' => 'donnie@donnie.nl',
                 'passowrd' => 'donnie',
-                'admin' => '0'
+                'admin' => 0
             ],
             ];
         DB::table('users')->insert($users);
