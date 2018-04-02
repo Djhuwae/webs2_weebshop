@@ -20,14 +20,14 @@ class UserSeeder extends Seeder
                 'id' => 1,
                 'name' => 'admin',
                 'email' => 'admin@admin.nl',
-                'password' => 'admin',
+                'password' => 'admin1',
                 'admin' => 1,
             ],
             [
                 'id' => 2,
                 'name' => 'donnie',
                 'email' => 'donnie@donnie.nl',
-                'passowrd' => 'donnie',
+                'password' => 'donnie1',
                 'admin' => 0
             ],
             ];
